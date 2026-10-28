@@ -38,7 +38,15 @@ export const AndroidFrame: React.FC<AndroidFrameProps> = ({
           </div>
           <span className="font-semibold text-sm tracking-tight text-white">Daily Life Manager</span>
           <span className="hidden sm:inline-block text-slate-500">·</span>
-          <span className="hidden sm:inline-block text-emerald-400">Android & Web PWA</span>
+          <a
+            href="https://github.com/neeteshkhatry-art/daily-life-manager-khatry"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors border border-slate-700/60"
+            title="Open GitHub Repository"
+          >
+            <span>neeteshkhatry-art/daily-life-manager-khatry</span>
+          </a>
         </div>
 
         <div className="flex items-center gap-2">

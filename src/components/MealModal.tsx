@@ -41,7 +41,31 @@ export const MealModal: React.FC<MealModalProps> = ({
   const [notes, setNotes] = useState('');
   const [saveToLibrary, setSaveToLibrary] = useState(true);
 
+  const selectFoodItem = (item: FoodDatabaseItem, overrideServings?: number) => {
+    const s = overrideServings !== undefined ? overrideServings : servings;
+    setSelectedFood(item);
+    setFoodName(item.name);
+    setServingSize(item.servingSize);
+    setCalories(Math.round(item.caloriesPerServing * s));
+    setProteinG(Number((item.proteinG * s).toFixed(1)));
+    setCarbsG(Number((item.carbsG * s).toFixed(1)));
+    setFatG(Number((item.fatG * s).toFixed(1)));
+  };
+
+  const handleServingMultiplier = (newServings: number) => {
+    if (newServings <= 0) return;
+    setServings(newServings);
+    if (selectedFood) {
+      setCalories(Math.round(selectedFood.caloriesPerServing * newServings));
+      setProteinG(Number((selectedFood.proteinG * newServings).toFixed(1)));
+      setCarbsG(Number((selectedFood.carbsG * newServings).toFixed(1)));
+      setFatG(Number((selectedFood.fatG * newServings).toFixed(1)));
+    }
+  };
+
   useEffect(() => {
+    if (!isOpen) return;
+
     if (editingMeal) {
       setMealType(editingMeal.mealType);
       setFoodName(editingMeal.foodName);
@@ -66,33 +90,14 @@ export const MealModal: React.FC<MealModalProps> = ({
       setSelectedFood(null);
       // Pre-select first food
       if (foodDatabase.length > 0) {
-        selectFoodItem(foodDatabase[0]);
+        selectFoodItem(foodDatabase[0], 1);
       }
     }
   }, [editingMeal, isOpen, defaultMealType, foodDatabase]);
 
   if (!isOpen) return null;
 
-  const selectFoodItem = (item: FoodDatabaseItem) => {
-    setSelectedFood(item);
-    setFoodName(item.name);
-    setServingSize(item.servingSize);
-    setCalories(Math.round(item.caloriesPerServing * servings));
-    setProteinG(Number((item.proteinG * servings).toFixed(1)));
-    setCarbsG(Number((item.carbsG * servings).toFixed(1)));
-    setFatG(Number((item.fatG * servings).toFixed(1)));
-  };
 
-  const handleServingMultiplier = (newServings: number) => {
-    if (newServings <= 0) return;
-    setServings(newServings);
-    if (selectedFood) {
-      setCalories(Math.round(selectedFood.caloriesPerServing * newServings));
-      setProteinG(Number((selectedFood.proteinG * newServings).toFixed(1)));
-      setCarbsG(Number((selectedFood.carbsG * newServings).toFixed(1)));
-      setFatG(Number((selectedFood.fatG * newServings).toFixed(1)));
-    }
-  };
 
   const filteredFoods = foodDatabase.filter(
     (f) =>

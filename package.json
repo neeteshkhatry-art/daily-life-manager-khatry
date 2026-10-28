@@ -1,7 +1,14 @@
 {
-  "name": "react-example",
+  "name": "daily-life-manager-khatry",
+  "version": "1.0.0",
+  "description": "Daily Life Manager - Personal finance, budget planner, expense tracker, and diet nutrition logger for Android and Web",
+  "author": "Neetesh Khatry <neetesh.khatry@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neeteshkhatry-art/daily-life-manager-khatry.git"
+  },
+  "homepage": "https://github.com/neeteshkhatry-art/daily-life-manager-khatry#readme",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
