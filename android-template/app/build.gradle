@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace "com.dailylife.manager"
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId "com.dailylife.manager"
+        minSdkVersion 26
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("release-key.jks")
+            storePassword System.getenv("KEYSTORE_PASSWORD") ?: "dailylife123"
+            keyAlias "dailylife"
+            keyPassword System.getenv("KEY_PASSWORD") ?: "dailylife123"
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.webkit:webkit:1.10.0'
+}

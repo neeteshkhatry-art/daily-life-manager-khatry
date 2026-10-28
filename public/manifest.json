@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "Daily Life Manager",
+  "short_name": "DailyLife",
+  "description": "Daily Life Manager - Personal finance, budget planner, expense tracker, and diet nutrition logger.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

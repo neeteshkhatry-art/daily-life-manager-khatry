@@ -1,0 +1,6 @@
+{
+  "name": "Daily Life Manager",
+  "description": "All-in-one personal finance, budget planner, expense tracker, and daily diet & nutrition manager for Android and Web.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

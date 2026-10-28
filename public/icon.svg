@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+  <!-- Background squircle -->
+  <rect width="512" height="512" rx="128" fill="url(#grad)" />
+  
+  <!-- Subtle inner glow -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="4" />
+
+  <!-- Shield / Wallet and Diet Leaf Emblem -->
+  <!-- Rupee Symbol stylized with wallet card -->
+  <g fill="#ffffff">
+    <!-- Rupee symbol -->
+    <path d="M170 140 h172 c11 0 20 9 20 20 s-9 20 -20 20 h-172 c-11 0 -20 -9 -20 -20 s9 -20 20 -20z" />
+    <path d="M170 200 h172 c11 0 20 9 20 20 s-9 20 -20 20 h-90 c20 18 32 44 32 72 0 5 -1 10 -2 15 l85 95 c7 8 6 21 -2 28 -8 7 -21 6 -28 -2 l-95 -106 h-20 c-11 0 -20 -9 -20 -20 0 -44 36 -80 80 -80 h60 c-4 -12 -14 -22 -26 -22 h-146 c-11 0 -20 -9 -20 -20 s9 -20 20 -20z" />
+  </g>
+
+  <!-- Green leaf accent representing nutrition/diet -->
+  <path d="M340 130 C 400 130, 420 190, 420 220 C 370 230, 310 200, 310 160 C 310 140, 325 130, 340 130 Z" fill="url(#leafGrad)" />
+  <path d="M340 130 Q 365 175 420 220" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+</svg>
